@@ -1,0 +1,22 @@
+{
+    "name": "robertdevore/telemetry-tracker",
+    "description": "A WordPress® telemetry tracking package for plugin analytics.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Robert DeVore",
+            "email": "me@robertdevore.com",
+            "homepage": "https://robertdevore.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TelemetryTracker\\": "src/"
+        }
+    }
+}
