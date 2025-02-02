@@ -1,6 +1,6 @@
 {
     "name": "robertdevore/telemetry-tracker",
-    "description": "A WordPress® telemetry tracking package for plugin analytics.",
+    "description": "A WordPress telemetry tracking package for plugin analytics.",
     "type": "library",
     "license": "MIT",
     "authors": [
