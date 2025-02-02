@@ -22,5 +22,10 @@ $plugin_version = '1.0.0';
 
 $telemetry_tracker = new TelemetryTracker( $plugin_slug, $plugin_version );
 
-register_activation_hook( __FILE__, [ 'TelemetryTracker\\TelemetryTracker', 'activate' ] );
-register_deactivation_hook( __FILE__, [ 'TelemetryTracker\\TelemetryTracker', 'deactivate' ] );
+register_activation_hook( __FILE__, function() use ( $plugin_slug, $plugin_version ) {
+    TelemetryTracker::activate( $plugin_slug, $plugin_version );
+});
+
+register_deactivation_hook( __FILE__, function() use ( $plugin_slug, $plugin_version ) {
+    TelemetryTracker::deactivate( $plugin_slug, $plugin_version );
+});
