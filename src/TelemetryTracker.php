@@ -8,7 +8,7 @@ class TelemetryTracker {
     private $plugin_version;
 
     public function __construct( $plugin_slug, $plugin_version ) {
-        $this->plugin_slug = $plugin_slug;
+        $this->plugin_slug    = $plugin_slug;
         $this->plugin_version = $plugin_version;
 
         add_action( 'init', [ $this, 'schedule_weekly_ping' ] );
@@ -19,13 +19,13 @@ class TelemetryTracker {
      */
     public function send_ping( $event ) {
         $plugin_data = [
-            'site_hash'   => md5( home_url() ),
-            'plugin'      => $this->plugin_slug,
-            'version'     => $this->plugin_version,
-            'wp_version'  => get_bloginfo( 'version' ),
-            'php_version' => phpversion(),
+            'site_hash'     => md5( home_url() ),
+            'plugin'        => $this->plugin_slug,
+            'version'       => $this->plugin_version,
+            'wp_version'    => get_bloginfo( 'version' ),
+            'php_version'   => phpversion(),
             'mysql_version' => $GLOBALS['wpdb']->db_version(),
-            'event'       => $event,
+            'event'         => $event,
         ];
 
         wp_remote_post( $this->api_url, [
