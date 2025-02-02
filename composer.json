@@ -18,5 +18,10 @@
         "psr-4": {
             "TelemetryTracker\\": "src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }
